@@ -1,0 +1,33 @@
+.card:hover {
+  transform: translateY(-5px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover .card-img {
+  filter: brightness(0.8);
+}
+.card:hover .card-content {
+  background-color: #f5f5f5;
+}
+.contact-card:hover {
+  transform: translateY(-5px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+li{
+  background-color: #F2EAD3;
+}
+.duration-1000 {
+transition: transform 1.5s ease-in-out;
+}
+@media (max-width: 768px) {
+.comment-block {
+  padding: 10px; /* Menambahkan ruang di sekitar komentar pada layar kecil */
+}
+.profile-img {
+  width: 40px; /* Mengatur ukuran gambar profil pada layar kecil */
+  height: 40px;
+}
+.customer-name {
+  font-size: 14px; /* Mengurangi ukuran font nama pada layar kecil */
+  }
+}

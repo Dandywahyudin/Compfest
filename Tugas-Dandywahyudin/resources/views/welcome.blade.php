@@ -1,84 +1,10 @@
-<!doctype html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  @vite(['resources/css/app.css','resources/js/app.js'])
-  <style>
-    .card:hover {
-      transform: translateY(-5px);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .card:hover .card-img {
-      filter: brightness(0.8);
-    }
-    .card:hover .card-content {
-      background-color: #f5f5f5;
-    }
-    .contact-card:hover {
-      transform: translateY(-5px);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
-    }
-    li{
-      background-color: #F2EAD3;
-    }
-    .duration-1000 {
-    transition: transform 1.5s ease-in-out;
-    }
-    @media (max-width: 768px) {
-    .comment-block {
-      padding: 10px; /* Menambahkan ruang di sekitar komentar pada layar kecil */
-    }
-    .profile-img {
-      width: 40px; /* Mengatur ukuran gambar profil pada layar kecil */
-      height: 40px;
-    }
-    .customer-name {
-      font-size: 14px; /* Mengurangi ukuran font nama pada layar kecil */
-    }
-  }
-  </style>
-</head>
-<body>
-<nav class="bg-[#F2EAD3] border-gray-200 dark:bg-gray-900">
-  <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-  <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
-      <img src="/photos/logo.png" class="h-14 w-full" alt="Flowbite Logo" />
-  </a>
-  <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse bg-[#F2EAD3]">
-      <button type="button" class="text-Brown bg-Brown-700 focus:ring-3 font-bold rounded-lg text-xl px-4 py-2 text-center">Login</button>
-      <button data-collapse-toggle="navbar-cta" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-cta" aria-expanded="false">
-        <span class="sr-only">Open main menu</span>
-        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
-        </svg>
-    </button>
-  </div>
-  <div class="bg-[#F2EAD3] items-center justify-between hidden w-full md:flex md:w-auto md:order-1 " id="navbar-cta">
-    <ul class="bg-[#F2EAD3] flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg  md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-        <li>
-            <a href="#" class="block py-2 px-3 md:p-0 text-Bround bg-white-700 rounded md:bg-transparent md:text-Brown-700 md:dark:text-Brown-500" aria-current="page">Home</a>
-        </li>
-        <li>
-            <a href="#" class="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-[#3F2305]-700 md:dark:hover:text-[#3F2305]-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">About</a>
-        </li>
-        <li>
-            <a href="#" class="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-[#3F2305]-700 md:dark:hover:text-[#3F2305]-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Services</a>
-        </li>
-        <li>
-            <a href="#" class="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-[#3F2305]-700 md:dark:hover:text-[#3F2305]-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Contact</a>
-        </li>
-    </ul>
-</div>
-</div>
-</nav>
+@include('partials.header')
 
 <!-- Carousel -->
 <div id="default-carousel" class="relative w-full" data-carousel="slide">
   <div class="relative h-56 md:h-96 lg:h-[565px] overflow-hidden shadow-lg">
        <!-- Item 1 -->
-      <div class="hidden duration-1000 ease-in-out" data-carousel-item>
+      <div class="hidden duration-1000 edase-in-out" data-carousel-item>
           <img src="/photos/carousel-1.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
           <div class="absolute inset-0 bg-Brown bg-opacity-40"></div>
           <div class="absolute inset-0 flex items-center justify-center">
@@ -86,7 +12,7 @@
               <h1 class="mb-4 text-2xl font-extrabold tracking-tight leading-none text-white sm:text-3xl md:text-5xl lg:text-6xl">Beauty and Elegance Redefined</h1>
               <p class="mb-8 text-sm sm:text-base md:text-lg lg:text-xl font-bold text-gray-200 lg:text-xl sm:px-13 lg:px-48">We prioritize the best quality service and attention to detail.</p>
               <div class="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0">
-                <a href="#" class="inline-flex justify-center hover:text-gray-900 items-center py-3 px-5 sm:ms-4 text-base font-medium text-center text-white rounded-lg border-2 border-white hover:bg-gray-100 focus:ring-4 focus:ring-gray-400">
+                <a href="/reservations" class="inline-flex justify-center hover:text-gray-900 items-center py-3 px-5 sm:ms-4 text-base font-medium text-center text-white rounded-lg border-2 border-white hover:bg-gray-100 focus:ring-4 focus:ring-gray-400">
                   Booking Now
               </a>  
               </div>
@@ -181,7 +107,7 @@
 </div>
 
  <!-- Services Section -->
- <section class="mt-16 py-12 bg-[#A79277]">
+ <section id="services" class="mt-16 py-12 bg-[#A79277]">
   <div class="container mx-auto px-6 lg:px-20">
     <div class="text-center mb-12">
       <h2 class="text-4xl font-extrabold text-gray-800">Our Services</h2>
@@ -220,7 +146,7 @@
 </section>
 
 {{-- Review --}}
-<section class="mt-10 py-10">
+<section id="review" class="mt-10 py-10">
   <div class="container mx-auto px-6 lg:px-20">
     <div class="text-center mb-12">
       <h2 class="text-4xl font-extrabold text-gray-800">Review</h2>
@@ -257,9 +183,8 @@
   </div>
 </section>
 
-
 <!-- Contact Details Section -->
- <section class="mt-16 py-12 bg-white">
+ <section id="contact" class="mt-16 py-12 bg-white">
   <div class="container mx-auto px-6 lg:px-20">
     <div class="text-center mb-12">
       <h2 class="text-4xl font-extrabold text-gray-800">Contact Details</h2>
@@ -289,12 +214,5 @@
     </div>
   </div>
 </section>
-<!-- Footer -->
-<footer class="bg-[#F2EAD3] py-6 mt-12">
-  <div class="container mx-auto px-6 lg:px-20 text-center">
-    <p class="text-Brown">&copy; 2024 SEA SALON. All rights reserved.</p>
-  </div>
-</footer>
-</body>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
-</html>
+
+@include('partials.footer')

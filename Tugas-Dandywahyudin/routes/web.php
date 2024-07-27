@@ -1,9 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\ReservationController;
-
 
 /*
 |--------------------------------------------------------------------------
@@ -21,3 +21,6 @@ Route::post('/reservations', [ReservationController::class, 'store']);
 
 Route::get('/', [ReviewController::class, 'index']);
 Route::post('/', [ReviewController::class, 'store']);
+
+Route::get('/login', [LoginController::class, 'index']);
+Route::post('/login', [LoginController::class, 'index']);

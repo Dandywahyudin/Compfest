@@ -20,9 +20,20 @@ class ReservationController extends Controller
             'phone_number' => 'required|string|max:15',
             'service_type' => 'required|string',
             'appointment_date' => 'required|date',
-            'appointment_time' => 'required|date_format:H:i',
+            'appointment_time' => [
+                'required',
+                'date_format:H:i',
+                function ($attribute, $value, $fail) {
+                    $time = strtotime($value);
+                    $start = strtotime('09:00');
+                    $end = strtotime('21:00');
+
+                    if ($time < $start || $time >= $end) {
+                        $fail('The ' . $attribute . ' must be between 09:00 and 21:00.');
+                    }
+                },
+            ],
         ]);
-        dd($validatedData);
         // Buat reservasi tanpa _token
         Reservation::create($validatedData);
 
